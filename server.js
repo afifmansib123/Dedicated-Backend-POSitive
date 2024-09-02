@@ -1,3 +1,5 @@
+process.noDeprecation = true;
+
 const express = require("express");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
@@ -48,8 +50,10 @@ app.get('/test', (req, res) => {
   res.send('Test route is working!');
 });
 
-app.listen(port, () => {
-  connect();
-  console.log(port, "Server running in port..");
-});
-
+module.exports = (req, res) => {
+  connect().then(() => {
+    return app(req, res);
+  }).catch(err => {
+    res.status(500).send("Error connecting to database");
+  });
+};
