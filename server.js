@@ -45,6 +45,10 @@ app.use("/tables", TableRoutes);
 //app.use("/api", cloudinaryRoutes);
 app.use("/tokens", TokenRoutes);
 
+app.get('/test', (req, res) => {
+  res.send('Test route is working!');
+});
+
 app.listen(port, () => {
   connect();
   console.log(port, "Server running in port..");
