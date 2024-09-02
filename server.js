@@ -2,7 +2,6 @@ const express = require("express");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const app = express();
-const cors = require("cors");
 const logger = require("morgan");
 
 const port = process.env.PORT || 5000;
@@ -22,19 +21,13 @@ dotenv.config();
 const connect = async () => {
   try {
     await mongoose.set("strictQuery", false);
-    await mongoose.connect(process.env.MONGO_URI);
+    await mongoose.connect("mongodb+srv://afifmansib123:Ageekis0cool!@cluster0.zhnoq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
     console.log("MongoDB is connected.");
   } catch (error) {
     throw error;
   }
 };
 
-app.use(cors({
-  origin: true,
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  allowedHeaders: ["Content-Type", "Authorization"],
-  credentials: true
-}));
 
 app.get('/', (req,res)=>{
   res.send('hello world')
