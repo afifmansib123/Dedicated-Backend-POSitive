@@ -3,11 +3,12 @@ const express = require("express");
 const router = express.Router();
 
 router.get("/get-all", async (req, res) => {
+  console.log('GET /categories/get-all hit');
   try {
     const categories = await Category.find();
     res.status(200).send(categories);
   } catch (error) {
-    res.status(404).json(error)
+    res.status(404).json(error);
   }
 });
 
