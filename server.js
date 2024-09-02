@@ -38,7 +38,7 @@ app.get('/', (req,res)=>{
 //middlewares
 app.use(logger("dev"));
 app.use(cors({ // CORS middleware configuration
-  origin: 'http://localhost:3000', // Replace with your frontend URL
+  origin: 'https://testpos-frontend.vercel.app', // Replace with your frontend URL
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true
 }));
