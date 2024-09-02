@@ -1,47 +1,5 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "server.js",
-      "use": "@vercel/node"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/categories(.*)",
-      "dest": "/server.js"
-    },
-    {
-      "src": "/products(.*)",
-      "dest": "/server.js"
-    },
-    {
-      "src": "/bills(.*)",
-      "dest": "/server.js"
-    },
-    {
-      "src": "/auth(.*)",
-      "dest": "/server.js"
-    },
-    {
-      "src": "/users(.*)",
-      "dest": "/server.js"
-    },
-    {
-      "src": "/tables(.*)",
-      "dest": "/server.js"
-    },
-    {
-      "src": "/tokens(.*)",
-      "dest": "/server.js"
-    },
-    {
-      "src": "/test",
-      "dest": "/server.js"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/server.js"
-    }
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/" }
   ]
 }
