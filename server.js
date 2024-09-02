@@ -42,7 +42,7 @@ app.use("/bills", billRoute);
 app.use("/auth", authRoute);
 app.use("/users", userRoute);
 app.use("/tables", TableRoutes);
-app.use("/api", cloudinaryRoutes);
+//app.use("/api", cloudinaryRoutes);
 app.use("/tokens", TokenRoutes);
 
 app.listen(port, () => {
