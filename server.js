@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const app = express();
 const logger = require("morgan");
+const cors = require("cors");
 
 const port = process.env.PORT || 5000;
 //routes
@@ -36,6 +37,11 @@ app.get('/', (req,res)=>{
 
 //middlewares
 app.use(logger("dev"));
+app.use(cors({ // CORS middleware configuration
+  origin: 'http://localhost:3000', // Replace with your frontend URL
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
+}));
 app.use(express.json());
 app.use("/categories", categoryRoute);
 app.use("/products", productRoute);
