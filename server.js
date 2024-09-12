@@ -24,7 +24,7 @@ dotenv.config();
 const connect = async () => {
   try {
     await mongoose.set("strictQuery", false);
-    await mongoose.connect("mongodb+srv://afif:JarifTestWithClients123@cluster0.u1sm1.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
+    await mongoose.connect("mongodb+srv://zarif:zarif2121@cluster0.zhnoq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
   } catch (error) {
     throw error;
   }
