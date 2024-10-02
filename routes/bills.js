@@ -30,4 +30,13 @@ router.put("/update-bill", async(req, res) => {
   }
 })
 
+router.delete("/delete-bill", async(req, res) => {
+  try{
+    const deleteBill = await Bill.findOneAndDelete({ _id: req.body._id }, req.body);
+    res.send(deleteBill || "Order deleted Successfully!");
+  }catch(error){
+    res.status(400).json(error)
+  }
+})
+
 module.exports = router;
