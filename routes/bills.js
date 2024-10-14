@@ -30,6 +30,15 @@ router.put("/update-bill", async(req, res) => {
   }
 })
 
+router.put("/Add-to-bill", async(req, res) => {
+  try{
+    const updatedBill = await Bill.findOneAndUpdate({ _id: req.body._id }, req.body);
+    res.send(updatedBill || "Order Checked Successfully!");
+  }catch(error){
+    res.status(400).json(error)
+  }
+})
+
 router.delete("/delete-bill", async(req, res) => {
   try{
     const deleteBill = await Bill.findOneAndDelete({ _id: req.body._id }, req.body);
