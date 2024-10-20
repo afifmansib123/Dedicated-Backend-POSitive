@@ -11,6 +11,7 @@ const BillSchema = mongoose.Schema(
     tax: { type: Number, require: true },
     totalAmount: { type: Number, require: true },
     checked: { type: Boolean, require:true,  default:false},
+    completed : { type: Boolean, require:true,  default:false}
   },
   { timestamps: true }
 );
