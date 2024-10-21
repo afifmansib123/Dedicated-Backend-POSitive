@@ -12,7 +12,8 @@ const BillSchema = mongoose.Schema(
     totalAmount: { type: Number, require: true },
     checked: { type: Boolean, require:true,  default:false},
     completed : { type: Boolean, require:true,  default:false},
-    customersidetoken : {type : String, require: false}
+    customersidetoken : {type : String, require: false},
+    waitertoclose: { type: String, require: false }
   },
   { timestamps: true }
 );
